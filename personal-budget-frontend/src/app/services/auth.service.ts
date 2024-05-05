@@ -17,7 +17,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class AuthService {
   private isAuthenticatedSubject: BehaviorSubject<boolean>;
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'http://18.216.195.177:3000';
   private dialogRefer: MatDialogRef<TokenExpiryComponent> | undefined;
 
   constructor(
