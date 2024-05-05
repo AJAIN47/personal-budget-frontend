@@ -9,8 +9,7 @@
     "test": "ng test",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "serve:ssr:personal-budget-frontend": "node dist/personal-budget-frontend/server/server.mjs"
+    "cypress:run": "cypress run"
   },
   "private": true,
   "dependencies": {
