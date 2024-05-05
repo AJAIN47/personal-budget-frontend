@@ -1,0 +1,39 @@
+.line-chart-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  background-color: #fff0f5;
+}
+
+.text-content {
+  width: 100%;
+  padding: 5%;
+  text-align: center;
+  align-self: center;
+}
+
+.chart-wrapper {
+  width: 100%;
+  padding: 5%;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+#budgetLineChart {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+@media (min-width: 768px) {
+  .line-chart-container {
+    flex-direction: row;
+  }
+
+  .text-content,
+  .chart-wrapper {
+    width: 50%;
+    padding: 2.5%;
+  }
+}

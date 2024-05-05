@@ -1,0 +1,77 @@
+.expense-container {
+  display: flex;
+  margin-top: 10px;
+  align-items: flex-start;
+  justify-content: center;
+  height: 85vh;
+}
+
+.component-container {
+  width: 50%;
+  padding: 20px;
+  margin-top: 50px;
+  margin-left: 50px;
+  border-radius: 20px;
+  border: 1px solid #dddddd;
+  background-color: #f9f9f9;
+  margin: 10px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  height: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 10px;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.centered {
+  justify-content: center;
+}
+
+.half-width {
+  display: flex;
+}
+
+.add-Expense-container {
+  width: 50%;
+  padding: 50px;
+}
+
+.add-expense button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.content-container select {
+  padding: 4px;
+  margin-left : 6px;
+  border: 1px solid #333;
+  background-color: #e6e5e5;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.error-msg {
+  padding: 22px;
+  color: red;
+}

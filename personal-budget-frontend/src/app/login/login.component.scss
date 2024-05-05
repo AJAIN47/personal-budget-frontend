@@ -1,0 +1,59 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 85.2vh;
+}
+
+.login {
+  margin-bottom: 20px;
+}
+
+.form-container {
+  width: 400px;
+}
+
+.login-container input {
+  width: 94%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #555;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.line {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+.create-account {
+  text-align: center;
+}
+
+.create-btn {
+  padding: 5px 10px;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
