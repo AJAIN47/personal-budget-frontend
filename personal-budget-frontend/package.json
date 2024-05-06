@@ -7,14 +7,15 @@
     },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.ts",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "build:prod": "ng build --configuration production"
+    "build:prod": "ng build --configuration production",
+    "heroku-postbuild": "npm run build --prod"
   },
   "private": true,
   "dependencies": {
