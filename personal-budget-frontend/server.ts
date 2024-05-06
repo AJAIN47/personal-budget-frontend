@@ -1,56 +1,21 @@
-import { APP_BASE_HREF } from '@angular/common';
-import { CommonEngine } from '@angular/ssr';
-import express from 'express';
-import { fileURLToPath } from 'node:url';
-import { dirname, join, resolve } from 'node:path';
-import bootstrap from './src/main.server';
+const express = require('express');
+const app = express();
+const path = require('path');
+const port = process.env['PORT'] || 3000;
+const server = require('http').Server(app);
 
-// The Express app is exported so that it can be used by serverless Functions.
-export function app(): express.Express {
-  const server = express();
-  const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-  const browserDistFolder = resolve(serverDistFolder, '../browser');
-  const indexHtml = join(serverDistFolder, 'index.server.html');
 
-  const commonEngine = new CommonEngine();
+// Serve only the static files form the angular app directory
+app.use(express.static(__dirname + '/your-application-name'));
 
-  server.set('view engine', 'html');
-  server.set('views', browserDistFolder);
+app.get('/*', function(req: any, res: { sendFile: (arg0: any) => void; }) {
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
-  // Serve static files from /browser
-  server.get('*.*', express.static(browserDistFolder, {
-    maxAge: '1y'
-  }));
+res.sendFile(path.join(__dirname+'/your-application-name/index.html'));
+});
 
-  // All regular routes use the Angular engine
-  server.get('*', (req, res, next) => {
-    const { protocol, originalUrl, baseUrl, headers } = req;
+// Start the app by listening on the default Heroku port
 
-    commonEngine
-      .render({
-        bootstrap,
-        documentFilePath: indexHtml,
-        url: `${protocol}://${headers.host}${originalUrl}`,
-        publicPath: browserDistFolder,
-        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
-      })
-      .then((html) => res.send(html))
-      .catch((err) => next(err));
-  });
 
-  return server;
-}
-
-function run(): void {
-  const port = process.env['PORT'] || 3000;
-
-  // Start up the Node server
-  const server = app();
-  server.listen(port, () => {
-    console.log(`Node Express server listening on http://0.0.0.0:${port}`);
-  });
-}
-
-run();
+server.listen(port, function () {
+    console.log("App running on port " + port);
+})
