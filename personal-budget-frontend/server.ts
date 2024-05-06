@@ -7,7 +7,7 @@ const app = express();
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/personal-budget-frontend'));
 
-app.get('/*', function(req: any,res: { sendFile: (arg0: any) => void; }) {
+app.get('/*', function(req: any,res: any ) {
 
 res.sendFile(path.join(__dirname+'/dist/personal-budget-frontend/index.html'));
 });
