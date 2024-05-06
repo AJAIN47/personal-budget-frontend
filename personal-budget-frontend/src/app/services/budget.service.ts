@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BudgetService {
-  private apiUrl = 'http://3.17.23.84:3000';
+  private apiUrl = 'https://3.17.23.84:3000';
 
   constructor(private http: HttpClient) {}
   token = localStorage.getItem('token');
