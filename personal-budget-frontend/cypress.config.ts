@@ -4,7 +4,7 @@ import eyesPlugin from '@applitools/eyes-cypress'
 
 export default eyesPlugin(defineConfig({
   e2e: {
-    'baseUrl': 'https://0.0.0.0:4200'
+    'baseUrl': 'http://0.0.0.0:4200'
   },
 
   component: {
