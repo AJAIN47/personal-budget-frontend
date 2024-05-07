@@ -4,7 +4,6 @@
   "compilerOptions": {
     "sourceMap": false,
     "types": ["cypress"],
-    "baseUrl": "http://0.0.0.0:4200"
   },
   "exclude": [
   ]
